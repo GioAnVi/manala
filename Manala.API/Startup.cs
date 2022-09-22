@@ -1,4 +1,6 @@
+using Manala.Core.Interface;
 using Manala.Infraestructure.Data;
+using Manala.Infraestructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +33,8 @@ namespace Manala.API
             {
                 datasql.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+            services.AddTransient<IPacientesRepository, PacienteRepository>();
+            services.AddCors();
             services.AddControllers();
         }
 

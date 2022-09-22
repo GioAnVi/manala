@@ -12,6 +12,6 @@ namespace Manala.Infraestructure.Data
         {
         }
 
-        public DbSet<Paciente> MyProperty { get; set; }
+        public DbSet<Paciente> Pacientes { get; set; }
     }
 }
